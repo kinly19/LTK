@@ -1,0 +1,31 @@
+// navbar
+  // navbar__content
+
+.navbar {
+  display: flex;
+  height: 100%;
+  background-color: var(--dark-secondary);
+  font-family: var(--font-primary);
+  color: var(--font-primary);
+
+  &__content {
+    flex: 4;
+    font-size: 1.6rem;
+    font-weight: 300;
+  }
+}
+
+@media screen and (max-width: 48em) {
+  .navbar {
+    flex-direction: column;
+
+    &__content {
+      flex: 1;
+      padding: 0;
+      max-height: 0; // transition height
+      opacity: 0;
+      overflow: hidden;
+      transition: ease-in 0.2s;
+    }
+  }
+}

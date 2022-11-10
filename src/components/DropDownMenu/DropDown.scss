@@ -1,0 +1,9 @@
+.dropDown {
+  &__items {
+    position: absolute;
+    top: 6rem;
+    left: 0;
+    width: 100%;
+    background-color: var(--dark-secondary);
+  }
+}

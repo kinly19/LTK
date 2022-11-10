@@ -1,0 +1,19 @@
+.nav__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 6rem;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  color: var(--grey-primary);
+  text-decoration: none;
+
+  &--active {
+    background-color: #2e2e2e;
+  }
+
+  &:hover {
+    background-color: #1a1a1a;
+  }
+}

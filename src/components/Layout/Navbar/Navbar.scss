@@ -3,8 +3,9 @@
 
 .navbar {
   display: flex;
-  height: 100%;
-  background-color: var(--dark-secondary);
+  position: fixed;
+  width: 100%;
+  background-color: var(--dark-nav);
   font-family: var(--font-primary);
   color: var(--font-primary);
 

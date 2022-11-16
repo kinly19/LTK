@@ -12,51 +12,49 @@ const Navbar = () => {
     ? { maxHeight: "200px", opacity: "1", overflow: "visible" }
     : {};
   // Handlers
-  const showMenuHandler = () => setIsToggled(!isToggled);
-  const hideMenuHandler = () => setIsToggled(false);
+  const toggleMenuHandler = () => setIsToggled(!isToggled);
 
   useEffect(() => {
     // Add events only if toggle menu is open
+    const events = ['scroll', 'resize'];
     if (isToggled) {
-      window.addEventListener('scroll', hideMenuHandler);
-      window.addEventListener('resize', hideMenuHandler);
+      events.forEach(ev => window.addEventListener(ev, toggleMenuHandler));
       // Clean up
       return () => {
-        window.removeEventListener('scroll', hideMenuHandler);
-        window.removeEventListener('resize', hideMenuHandler);
+        events.forEach(ev => window.removeEventListener(ev, toggleMenuHandler));
       };
     }
   }, [isToggled]);
 
   return (
     <header className="navbar">
-      <NavBrand toggleMenuHandler={showMenuHandler} />
+      <NavBrand toggleMenuHandler={toggleMenuHandler} />
       <nav className="navbar__content pdr-lg" style={toggleClass}>
         <NavItems>
           <NavItem 
             link={"/"} 
-            handler={hideMenuHandler} 
+            handler={toggleMenuHandler} 
             title={"Home"} 
           />
           <NavItem 
             link={"/about"} 
-            handler={hideMenuHandler} 
+            handler={toggleMenuHandler} 
             title={"About"} 
           />
           <NavItem
             link={"/classes"}
-            handler={hideMenuHandler}
+            handler={toggleMenuHandler}
             title={"Classes"}
           />
           <DropDown className="nav__item">
             <NavItem
               link={"/taekwondo"}
-              handler={hideMenuHandler}
+              handler={toggleMenuHandler}
               title={"Taekwondo"}
             />
             <NavItem 
               link={"/ranks"} 
-              handler={hideMenuHandler} 
+              handler={toggleMenuHandler} 
               title={"Ranks"} 
             />
           </DropDown>

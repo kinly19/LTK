@@ -1,0 +1,25 @@
+.infoSec {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: var(--padding-sm) var(--padding-lg);
+  
+  &::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 85%;
+    border-bottom: 3px solid rgba(255, 176, 58, 0.50);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 5rem;
+    gap: 3rem;
+  }
+}

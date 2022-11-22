@@ -5,6 +5,7 @@
   display: flex;
   position: fixed;
   width: 100%;
+  z-index: 100;
   background-color: var(--dark-nav);
   font-family: var(--font-primary);
   color: var(--font-primary);

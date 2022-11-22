@@ -4,6 +4,9 @@
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   padding: var(--padding-sm) var(--padding-lg);
   
   &::before {
@@ -11,8 +14,8 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 85%;
-    border-bottom: 3px solid rgba(255, 176, 58, 0.50);
+    width: 100%;
+    border-bottom: 5px solid rgba(255, 176, 58, 0.158);
   }
 
   &__content {

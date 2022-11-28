@@ -1,7 +1,8 @@
 .textContent {
   width: 100%;
+  font-family: var(--font-secondary);
   font-size: var(--text-main);
   color: var(--orange-primary);
-  line-height: 2.8rem;
-  letter-spacing: 0.03rem;
+  line-height: var(--line-height-text);
+  letter-spacing: var(--letter-space-text);
 }

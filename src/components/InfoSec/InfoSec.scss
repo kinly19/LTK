@@ -8,16 +8,8 @@
   background-position: center;
   background-attachment: fixed;
   padding: var(--padding-sm) var(--padding-lg);
+  border-bottom: 5px solid rgba(255, 176, 58, 0.158);
   
-  &::before {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    border-bottom: 5px solid rgba(255, 176, 58, 0.158);
-  }
-
   &__content {
     display: flex;
     flex-direction: column;
@@ -33,5 +25,11 @@
     &__content {
       width: 100%;
     }
+  }
+}
+
+@media screen and (max-width: 37.5em) {
+  .infoSec {
+    min-height: 50vh;
   }
 }

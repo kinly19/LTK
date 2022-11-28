@@ -1,0 +1,40 @@
+// testimonial
+  // testimonial__contentFooter
+  // testimonial__action
+    // testimonial__actionSpan
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 35rem;
+
+  &__footerText {
+    margin-top: 3rem;
+    color: var(--grey-primary);
+  }
+
+  &__action {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  &__actionSpan {
+    display: inline-block;
+    height: 1.7rem;
+    width: 1.7rem;
+    border-radius: 50%;
+    background-color: var(--orange-primary);
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.15);
+    }
+  }
+}
+
+.active {
+  background-color: var(--grey-primary);
+  transform: scale(1.15);
+}

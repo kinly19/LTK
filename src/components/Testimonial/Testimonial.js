@@ -26,7 +26,7 @@ const Testimonial = () => {
     },
   ];
 
-  const [selectedIndex, setSelectedIndex] = useState(1);
+  const [testimonialIndex, setTestimonialIndex] = useState(1);
   const [touchPosition, setTouchPosition] = useState({
     touchStart: null,
     touchEnd: null,
@@ -46,24 +46,24 @@ const Testimonial = () => {
     });
   };
 
-  const incrementIndexHandler = () => {
-    setSelectedIndex(prevState => prevState + 1)
-    if (selectedIndex === 2) setSelectedIndex(0)
-  }
+  const nextTestimonialHandler = () => {
+    setTestimonialIndex((prevState) => prevState + 1);
+    if (testimonialIndex === 2) setTestimonialIndex(0);
+  };
 
-  const decrementIndexHandler = () => {
-    setSelectedIndex(prevState => prevState - 1)
-    if (selectedIndex === 0) setSelectedIndex(2)
-  }
+  const prevTestimonialHandler = () => {
+    setTestimonialIndex((prevState) => prevState - 1);
+    if (testimonialIndex === 0) setTestimonialIndex(2);
+  };
 
   const touchEndHandler = () => {
     const { touchStart, touchEnd } = touchPosition;
 
     if (!touchEnd) return;
     // Touch slide left
-    if (touchStart - touchEnd > 120) decrementIndexHandler();
+    if (touchStart - touchEnd > 120) prevTestimonialHandler();
     // Touch slide right
-    if (touchStart - touchEnd < -120) incrementIndexHandler();
+    if (touchStart - touchEnd < -120) nextTestimonialHandler();
 
     setTouchPosition({ ...touchPosition, touchEnd: null });
   };
@@ -72,11 +72,11 @@ const Testimonial = () => {
     <span
       key={index}
       className={
-        selectedIndex === index
+        testimonialIndex === index
           ? "testimonial__actionSpan active"
           : "testimonial__actionSpan"
       }
-      onClick={() => setSelectedIndex(index)}
+      onClick={() => setTestimonialIndex(index)}
     ></span>
   ));
 
@@ -88,9 +88,9 @@ const Testimonial = () => {
       onTouchEnd={touchEndHandler}
     >
       <TextContent>
-        <p>{TESTIMONIALDATA[selectedIndex].review}</p>
+        <p>{TESTIMONIALDATA[testimonialIndex].review}</p>
         <p className="testimonial__footerText">
-          {TESTIMONIALDATA[selectedIndex].participant} - Participant of Ly Taekwondo workshop
+          {TESTIMONIALDATA[testimonialIndex].participant} - Participant of Ly Taekwondo workshop
         </p>
       </TextContent>
       <div className="testimonial__action">{spanItems}</div>

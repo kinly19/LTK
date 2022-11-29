@@ -27,7 +27,47 @@ const Testimonial = () => {
   ];
 
   const [selectedIndex, setSelectedIndex] = useState(1);
+  const [touchPosition, setTouchPosition] = useState({
+    touchStart: null,
+    touchEnd: null,
+  });
 
+  const touchStartHandler = (e) => {
+    setTouchPosition({
+      ...touchPosition,
+      touchStart: e.targetTouches[0].clientX,
+    });
+  };
+
+  const touchMoveHandler = (e) => {
+    setTouchPosition({
+      ...touchPosition,
+      touchEnd: e.targetTouches[0].clientX,
+    });
+  };
+
+  const incrementIndexHandler = () => {
+    setSelectedIndex(prevState => prevState + 1)
+    if (selectedIndex === 2) setSelectedIndex(0)
+  }
+
+  const decrementIndexHandler = () => {
+    setSelectedIndex(prevState => prevState - 1)
+    if (selectedIndex === 0) setSelectedIndex(2)
+  }
+
+  const touchEndHandler = () => {
+    const { touchStart, touchEnd } = touchPosition;
+
+    if (!touchEnd) return;
+    // Touch slide left
+    if (touchStart - touchEnd > 120) decrementIndexHandler();
+    // Touch slide right
+    if (touchStart - touchEnd < -120) incrementIndexHandler();
+
+    setTouchPosition({ ...touchPosition, touchEnd: null });
+  };
+ 
   const spanItems = TESTIMONIALDATA.map((_, index) => (
     <span
       key={index}
@@ -41,11 +81,16 @@ const Testimonial = () => {
   ));
 
   return (
-    <div className="testimonial">
+    <div
+      className="testimonial"
+      onTouchStart={touchStartHandler}
+      onTouchMove={touchMoveHandler}
+      onTouchEnd={touchEndHandler}
+    >
       <TextContent>
         <p>{TESTIMONIALDATA[selectedIndex].review}</p>
         <p className="testimonial__footerText">
-          {TESTIMONIALDATA[selectedIndex].participant} - Participant of Ly Taekwondo workshop
+          {TESTIMONIALDATA[selectedIndex]?.participant} - Participant of Ly Taekwondo workshop
         </p>
       </TextContent>
       <div className="testimonial__action">{spanItems}</div>

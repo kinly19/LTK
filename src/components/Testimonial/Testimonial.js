@@ -90,7 +90,7 @@ const Testimonial = () => {
       <TextContent>
         <p>{TESTIMONIALDATA[selectedIndex].review}</p>
         <p className="testimonial__footerText">
-          {TESTIMONIALDATA[selectedIndex]?.participant} - Participant of Ly Taekwondo workshop
+          {TESTIMONIALDATA[selectedIndex].participant} - Participant of Ly Taekwondo workshop
         </p>
       </TextContent>
       <div className="testimonial__action">{spanItems}</div>

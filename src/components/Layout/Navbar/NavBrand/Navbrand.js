@@ -4,7 +4,7 @@ import './NavBrand.scss';
 
 const NavBrand = (props) => {
   return (
-    <div className="nav__header pdl-lg">
+    <div className="nav__header">
       <Link className="nav__brand" to={"/"}>Ly Taekwondo</Link>
       <button className="nav__toggleBtn" onClick={props.toggleMenuHandler}>
         <FiMenu className="nav__toggleIcon" />

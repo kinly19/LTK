@@ -29,7 +29,7 @@ const Navbar = () => {
   return (
     <header className="navbar">
       <NavBrand toggleMenuHandler={toggleMenuHandler} />
-      <nav className="navbar__content pdr-lg" style={toggleClass}>
+      <nav className="navbar__content" style={toggleClass}>
         <NavItems>
           <NavItem 
             link={"/"} 

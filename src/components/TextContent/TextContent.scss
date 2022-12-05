@@ -5,4 +5,8 @@
   color: var(--orange-primary);
   line-height: var(--line-height-text);
   letter-spacing: var(--letter-space-text);
+
+  p:not(:last-child) {
+    margin-bottom: 3rem;
+  }
 }

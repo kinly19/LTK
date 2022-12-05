@@ -1,4 +1,5 @@
 import Heading from '../Heading/Heading';
+import ContentContainer from '../Layout/Content/ContentContainer';
 import './InfoSec.scss';
 
 const InfoSec = (props) => {
@@ -9,9 +10,9 @@ const InfoSec = (props) => {
   return (
     <section className="infoSec" style={backgroundImg}>
      <Heading>{props.heading}</Heading>
-      <div className="infoSec__content">
+      <ContentContainer>
         {props.children}
-      </div>
+      </ContentContainer>
     </section>
   );
 };

@@ -1,4 +1,5 @@
 import Heading from '../../Heading/Heading';
+import ContentContainer from '../Content/ContentContainer';
 import './PageLayout.scss';
 
 const PageLayout = (props) => {
@@ -9,7 +10,7 @@ const PageLayout = (props) => {
   return (
     <main className="pageLayout" style={backgroundImg}>
       <Heading>{props.heading}</Heading>
-      <div className="pageLayout__content">{props.children}</div>
+      <ContentContainer>{props.children}</ContentContainer>
     </main>
   );
 };

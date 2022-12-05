@@ -10,19 +10,4 @@
   padding: 20rem var(--padding-lg);
   border-bottom: 5px solid rgba(255, 176, 58, 0.158);
   font-family: var(--font-primary);
-
-  &__content {
-    display: flex;
-    flex-direction: column;
-    gap: 5rem;
-    width: 80%;
-  }
-}
-
-@media only screen and (max-width: 48em) {
-  .pageLayout {
-    &__content {
-      width: 100%;
-    }
-  }
 }

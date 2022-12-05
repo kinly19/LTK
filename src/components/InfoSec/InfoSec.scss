@@ -10,21 +10,6 @@
   padding: var(--padding-sm) var(--padding-lg);
   border-bottom: 5px solid rgba(255, 176, 58, 0.158);
 
-  &__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 80%;
-    gap: 3rem;
-  }
-}
-
-@media screen and (max-width: 48em) {
-  .infoSec {
-    &__content {
-      width: 100%;
-    }
-  }
 }
 
 @media screen and (max-width: 37.5em) {

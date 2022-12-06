@@ -12,7 +12,7 @@ const Card = (props) => {
   return (
     <div className="card">
       <div className="card__header">
-        <Heading fontSize={"4rem"} marginBottom={"0"}>
+        <Heading fontSize={props.headingFontsize} marginBottom={"0"}>
           {props.heading}
         </Heading>
         {props.subHeading && subHeader}

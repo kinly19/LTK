@@ -1,3 +1,4 @@
+import Heading from '../Heading/Heading';
 import SubHeading from '../Heading/SubHeading/SubHeading';
 import './Card.scss';
 import CardHeader from './CardHeader/CardHeader';
@@ -12,7 +13,9 @@ const Card = (props) => {
   return (
     <div className="card">
       <div className="card__header">
-        <CardHeader fontSize={props.headingFontsize}>{props.heading}</CardHeader>
+        <Heading fontSize={"4rem"} marginBottom={"0"}>
+          {props.heading}
+        </Heading>
         {props.subHeading && subHeader}
       </div>
       <p className="card__text">{props.content}</p>

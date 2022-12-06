@@ -8,7 +8,7 @@ const PageLayout = (props) => {
 
   return (
     <main className="pageLayout" style={backgroundImg}>
-      <Heading>{props.heading}</Heading>
+      <Heading fontSize={props.headingFontsize}>{props.heading}</Heading>
       {props.children}
     </main>
   );

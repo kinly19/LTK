@@ -1,7 +1,6 @@
 import Heading from '../Heading/Heading';
 import SubHeading from '../Heading/SubHeading/SubHeading';
 import './Card.scss';
-import CardHeader from './CardHeader/CardHeader';
 
 const Card = (props) => {
   const subHeader = (

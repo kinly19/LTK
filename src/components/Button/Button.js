@@ -5,7 +5,7 @@ const Button = (props) => {
   const navigate = useNavigate();
   return (
     <button
-      className={`button ${props.class || ""}`}
+      className={!props.class ? "button" : `button ${props.class}`}
       onClick={() => navigate(props.redirectTo)}
     >
       {props.children}

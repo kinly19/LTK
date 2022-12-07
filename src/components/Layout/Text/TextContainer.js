@@ -1,6 +1,6 @@
-import './TextContent.scss';
+import './TextContainer.scss';
 
-const TextContent = (props) => {
+const TextContainer = (props) => {
   const containerStyle = { width: props.width, fontSize: props.fontSize}
 
   return (
@@ -10,4 +10,4 @@ const TextContent = (props) => {
   );
 };
 
-export default TextContent;
+export default TextContainer;

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import TextContent from '../TextContent/TextContent';
+import TextContent from '../Layout/Text/TextContainer';
 import './Testimonial.scss';
 
 const Testimonial = () => {

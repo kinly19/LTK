@@ -1,0 +1,17 @@
+.taekwondo {
+  &__content {
+    margin-bottom: 5rem;
+  }
+ 
+  &__list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    list-style-type: none;
+  }
+
+  &__item {
+    flex: 1;
+  }
+}

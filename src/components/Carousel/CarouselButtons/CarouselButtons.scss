@@ -1,0 +1,36 @@
+.carouselButtons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+
+  &__left, &__right {
+    position: absolute;
+    transform: translateY(-50%);
+    height: auto;
+    width: 5rem;
+    border: none;
+    background-color: transparent;
+    color: var(--orange-primary);
+  }
+
+  &__left {
+    left: -8%;
+  }
+
+  &__right {
+    right: -8%;
+  }
+  
+  svg {
+    height: 100%;
+    width: 100%;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    &:active {
+      transform: scale(1);
+    }
+  }
+}

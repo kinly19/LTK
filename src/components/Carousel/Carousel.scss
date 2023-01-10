@@ -1,0 +1,54 @@
+.carousel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  &__wrapper {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  &__content-wrapper {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__content {
+    display: flex;
+    gap: 1rem;
+    height: 100%;
+    transition: all 0.20s linear;
+  }
+
+  &__content > * {
+    flex-shrink: 0;
+    flex-grow: 1;
+    width: 100%;
+    aspect-ratio: 1;
+  }
+}
+
+.show-1 > * {
+  width: calc(100% / 1 - 1rem); // Take flex gap value into account
+}
+
+.show-2 > * {
+  width: calc(100% / 2 - 1rem); 
+}
+
+.show-3 > * {
+  width: calc(100% / 3 - 1rem);
+}
+
+@media screen and (max-width: 25em) {
+  .carousel {
+    &__wrapper {
+      width: 80%;
+    }
+  } 
+}

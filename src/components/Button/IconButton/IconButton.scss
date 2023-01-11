@@ -1,0 +1,20 @@
+.iconBtn {
+  height: 5rem;
+  width: 5rem;
+  border: none;
+  background: transparent;
+  color: var(--orange-primary);
+
+  svg {
+    height: 100%;
+    width: 100%;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  
+    &:active {
+      transform: scale(1);
+    }
+  }
+}

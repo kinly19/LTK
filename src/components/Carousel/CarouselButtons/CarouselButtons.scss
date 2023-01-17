@@ -20,17 +20,4 @@
   &__right {
     right: -8%;
   }
-  
-  svg {
-    height: 100%;
-    width: 100%;
-
-    &:hover {
-      transform: scale(1.03);
-    }
-
-    &:active {
-      transform: scale(1);
-    }
-  }
 }

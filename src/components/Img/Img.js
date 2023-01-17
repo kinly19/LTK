@@ -2,7 +2,7 @@ import './Img.scss';
 
 const Img = (props) => {
   return (
-    <img className="imgContainer" src={props.imgSrc} />
+    <img className={props.class ? `imgContainer ${props.class}` : 'imgContainer'} src={props.imgSrc} />
   );
 };
 

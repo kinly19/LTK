@@ -41,7 +41,7 @@ const Carousel = (props) => {
 
   const toggleImageSliderHandler = (index) => {
     setShowSlider(!showSlider);
-    setSelectedSlideIndex(index);
+    if (!showSlider) setSelectedSlideIndex(index);
   }
 
   useEffect(() => {

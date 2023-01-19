@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 import IconButton from '../Button/IconButton/IconButton';
 import CarouselButtons from '../Carousel/CarouselButtons/CarouselButtons';
@@ -8,6 +8,7 @@ import './ImgSlider.scss';
 const ImgSlider = (props) => {
   const [currentSlide, setCurrentSlide] = useState(props.currentSlide);
   const imagesArray = props.imageData;
+  const isToggled = props.onToggle;
 
   const nextSlideHandler = () => {
     if (currentSlide < imagesArray.length - 1) setCurrentSlide((prevState) => prevState + 1);
@@ -17,8 +18,12 @@ const ImgSlider = (props) => {
     if (currentSlide > 0) setCurrentSlide((prevState) => prevState - 1);
   }
 
+  useEffect(() => {
+    setCurrentSlide(props.currentSlide);
+  },[props.currentSlide])
+
   return (
-    <div className="imgSlider">
+    <div className={isToggled ? `imgSlider` : "imgSlider hidden"}>
       <div className="imgSlider__toggle">
         <IconButton onClick={props.onToggleSlider}>
           <AiOutlineCloseCircle />

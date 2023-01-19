@@ -64,14 +64,12 @@ const Carousel = (props) => {
         </div>
       </div>
       <CarouselButtons onClickLeft={prevSlideHandler} onClickRight={nextSlideHandler} />
-      
-      {showSlider && (
-        <ImgSlider
+      <ImgSlider
+          onToggle={showSlider}
           imageData={imageArray}
           currentSlide={selectedSlideIndex}
           onToggleSlider={toggleImageSliderHandler}
         />
-      )}
     </div>
   );
 };

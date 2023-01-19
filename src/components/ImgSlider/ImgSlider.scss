@@ -14,7 +14,7 @@
   z-index: 1000;
   backdrop-filter: blur(5px);
   background-color: var(--dark-overlay);
-  padding: 5% 10%;
+  transition: all ease-in-out 0.2s;
 
   &__toggle {
     position: absolute;
@@ -27,7 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 70%;
   }
 
   &__content {
@@ -39,4 +39,10 @@
 
 .img-contain {
   object-fit: contain;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  padding: 0;
 }

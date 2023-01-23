@@ -2,6 +2,7 @@ import PageLayout from '../../components/Layout/PageLayout/PageLayout';
 import ContentContainer from '../../components/Layout/Content/ContentContainer';
 import TextContainer from '../../components/Layout/Text/TextContainer';
 import Button from '../../components/Button/Button';
+import Img from '../../components/Img/Img';
 import img1 from '../../assets/img/img1.jpg';
 import './About.scss';
 
@@ -9,7 +10,7 @@ const About = () => {
   return (
     <PageLayout backgroundImage={img1} heading={"About Me"}>
       <ContentContainer>
-        <img className="about__img" src={img1} alt="img1" />
+        <Img class="about__img" imgSrc={img1} alt="img1"/>
         <TextContainer>
           <p>
             Trained in wt style Taekwondo since 2009 and teaching From 2017,

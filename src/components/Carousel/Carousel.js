@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import useCount from '../../hooks/UseCount/useCount'; // custom hook
 import CarouselButtons from './CarouselButtons/CarouselButtons';
 import CarouselItem from './CarouselItem/CarouselItem';
 import ImgSlider from '../ImgSlider/ImgSlider';
@@ -6,12 +7,17 @@ import Img from '../Img/Img';
 import './Carousel.scss';
 
 const Carousel = (props) => {
-  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [selectedSlideIndex, setSelectedSlideIndex] = useState(null);
   const [length, setLength] = useState(props.imgData.length);
   const [viewportWidth, setViewPortWidth] = useState(window.innerWidth);
   const [showSlider, setShowSlider] = useState(false);
   const imageArray = props.imgData;
+
+  const {
+    count: currentSlideIndex,
+    incrementCount: nextSlideHandler,
+    decrementCount: prevSlideHandler,
+  } = useCount(length);
 
   // Slides to show per view
   let slideAmount = 3;
@@ -24,16 +30,6 @@ const Carousel = (props) => {
       <Img imgSrc={imgItem} />
     </CarouselItem>
   ));
-  
-  const prevSlideHandler = () => {
-    if (currentSlideIndex > 0)
-      setCurrentSlideIndex((prevState) => prevState - 1);
-  };
-
-  const nextSlideHandler = () => {
-    if (currentSlideIndex < length - slideAmount)
-      setCurrentSlideIndex((prevState) => prevState + 1);
-  };
 
   const resizeHandler = () => {
     setViewPortWidth(window.innerWidth);
@@ -63,7 +59,7 @@ const Carousel = (props) => {
           </div>
         </div>
       </div>
-      <CarouselButtons onClickLeft={prevSlideHandler} onClickRight={nextSlideHandler} />
+      <CarouselButtons onClickLeft={prevSlideHandler} onClickRight={() => nextSlideHandler(slideAmount)} />
       <ImgSlider
           onToggle={showSlider}
           imageData={imageArray}

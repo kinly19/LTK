@@ -1,25 +1,25 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai'
+import useCount from '../../hooks/UseCount/useCount';
 import IconButton from '../Button/IconButton/IconButton';
 import CarouselButtons from '../Carousel/CarouselButtons/CarouselButtons';
 import Img from '../Img/Img';
 import './ImgSlider.scss';
 
 const ImgSlider = (props) => {
-  const [currentSlide, setCurrentSlide] = useState(props.currentSlide);
+  // Custom hook
+  const {
+    count: currentSlide,
+    setCount,
+    incrementCount: nextSlideHandler,
+    decrementCount: prevSlideHandler,
+  } = useCount(props.imageData.length);
+  
   const imagesArray = props.imageData;
   const isToggled = props.onToggle;
-
-  const nextSlideHandler = () => {
-    if (currentSlide < imagesArray.length - 1) setCurrentSlide((prevState) => prevState + 1);
-  }
-
-  const prevSlideHandler = () => {
-    if (currentSlide > 0) setCurrentSlide((prevState) => prevState - 1);
-  }
-
+  
   useEffect(() => {
-    setCurrentSlide(props.currentSlide);
+    setCount(props.currentSlide);
   },[props.currentSlide])
 
   return (

@@ -22,7 +22,7 @@ const Carousel = (props) => {
   // Slides to show per view
   let slideAmount = 3;
   if (viewportWidth <= 768) slideAmount = 2;
-  if (viewportWidth <= 400) slideAmount = 1;
+  if (viewportWidth <= 600) slideAmount = 1;
 
   // Carousel items
   const carouselItems = imageArray.map((imgItem, index) => (

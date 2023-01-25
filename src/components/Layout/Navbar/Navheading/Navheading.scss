@@ -50,7 +50,7 @@
   .nav {
     &__header {
       justify-content: space-between;
-      padding-right: 15%;
+      padding-right: var(--padding-md);
     }
   
     &__toggleBtn {

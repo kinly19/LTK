@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
+import Navbrand from '../Navbrand/Navbrand.js';
 import { FiMenu } from 'react-icons/fi';
 import './Navheading.scss';
 
-const NavBrand = (props) => {
+const Navheading = (props) => {
   return (
     <div className="nav__header">
-      <Link className="nav__brand" to={"/"}>Ly Taekwondo</Link>
+      <Navbrand />
       <button className="nav__toggleBtn" onClick={props.toggleMenuHandler}>
         <FiMenu className="nav__toggleIcon" />
       </button>
@@ -13,4 +13,4 @@ const NavBrand = (props) => {
   );
 };
 
-export default NavBrand;
+export default Navheading;

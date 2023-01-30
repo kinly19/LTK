@@ -1,0 +1,37 @@
+.footer {
+  background-color: var(--dark-nav-solid);
+  font-family: var(--font-primary);
+  color: var(--grey-primary);
+  padding: 5rem var(--padding-lg);
+  
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  &__icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+
+    & p {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__comment {
+    margin-top: 2rem;
+    font-weight: 300;
+    font-size: 1.6rem;
+  }
+
+  &__copyright {
+    font-size: 1.2rem;
+    letter-spacing: 0.12rem;
+  }
+}

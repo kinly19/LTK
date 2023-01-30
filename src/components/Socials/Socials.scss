@@ -1,0 +1,8 @@
+.socials {
+  display: flex;
+  gap: 1rem;
+
+  &__icon {
+    color: var(--grey-primary);
+  }
+}

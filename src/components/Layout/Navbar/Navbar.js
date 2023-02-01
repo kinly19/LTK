@@ -41,12 +41,24 @@ const Navbar = () => {
             handler={toggleMenuHandler} 
             title={"About"} 
           />
-          <NavItem
-            link={"/classes"}
-            handler={toggleMenuHandler}
-            title={"Classes"}
-          />
-          <DropDown className="nav__item">
+          <DropDown className="nav__item" title={"Classes"}>
+            <NavItem
+              link={"/adults"}
+              handler={toggleMenuHandler}
+              title={"TKD Adults"}
+            />
+            <NavItem 
+              link={"/kids"} 
+              handler={toggleMenuHandler} 
+              title={"TKD Kids"} 
+            />
+            <NavItem 
+              link={"/private"} 
+              handler={toggleMenuHandler} 
+              title={"TKD Private"} 
+            />
+          </DropDown>
+          <DropDown className="nav__item" title={"More"}>
             <NavItem
               link={"/taekwondo"}
               handler={toggleMenuHandler}

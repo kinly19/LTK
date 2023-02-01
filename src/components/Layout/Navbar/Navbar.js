@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import NavBrand from './NavBrand/Navbrand.js';
+import Navheading from './Navheading/Navheading.js';
 import NavItems from './NavItems/NavItems.js';
 import NavItem from './NavItem/NavItem.js';
 import DropDown from '../../DropDownMenu/DropDown.js';
@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <header className="navbar">
-      <NavBrand toggleMenuHandler={toggleMenuHandler} />
+      <Navheading toggleMenuHandler={toggleMenuHandler} />
       <nav className="navbar__content" style={toggleClass}>
         <NavItems>
           <NavItem 

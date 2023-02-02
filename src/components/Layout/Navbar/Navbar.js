@@ -9,7 +9,7 @@ const Navbar = () => {
   const [isToggled, setIsToggled] = useState(false);
   // Toggled styles
   const toggleClass = isToggled
-    ? { maxHeight: "200px", opacity: "1", overflow: "visible" }
+    ? { maxHeight: "500px", opacity: "1", overflow: "visible" }
     : {};
   // Handlers
   const toggleMenuHandler = () => setIsToggled(!isToggled);
@@ -41,7 +41,7 @@ const Navbar = () => {
             handler={toggleMenuHandler} 
             title={"About"} 
           />
-          <DropDown className="nav__item" title={"Classes"}>
+          <DropDown class="nav__item" title={"Classes"}>
             <NavItem
               link={"/adults"}
               handler={toggleMenuHandler}
@@ -58,7 +58,7 @@ const Navbar = () => {
               title={"TKD Private"} 
             />
           </DropDown>
-          <DropDown className="nav__item" title={"More"}>
+          <DropDown class="nav__item" title={"More"}>
             <NavItem
               link={"/taekwondo"}
               handler={toggleMenuHandler}

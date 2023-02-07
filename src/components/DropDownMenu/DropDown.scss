@@ -1,9 +1,29 @@
 .dropDown {
   &__items {
     position: absolute;
-    top: 6rem;
+    top: 100%;
     left: 0;
     width: 100%;
     background-color: var(--dark-secondary);
+  }
+
+  &__btn {
+    height: 100%;
+    width: 100%;
+    padding: 2rem 0;
+    background-color: transparent;
+    border: none;
+    color: var(--grey-primary);
+    font-family: var(--font-primary);
+    font-size: 1.6rem;
+    font-weight: 300;
+  }
+}
+
+@media screen and (max-width: 48em) {
+  .dropDown {
+    &__items {
+      position: static;
+    }
   }
 }

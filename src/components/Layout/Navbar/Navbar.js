@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import Navheading from './Navheading/Navheading.js';
 import NavItems from './NavItems/NavItems.js';
 import NavItem from './NavItem/NavItem.js';
@@ -7,16 +8,20 @@ import './Navbar.scss';
 
 const Navbar = () => {
   const [isToggled, setIsToggled] = useState(false);
+  const currentUrl = useLocation();
+
   // Toggled styles
   const toggleClass = isToggled
     ? { maxHeight: "500px", opacity: "1", overflow: "visible" }
     : {};
+
   // Handlers
   const toggleMenuHandler = () => setIsToggled(!isToggled);
 
   useEffect(() => {
     // Add events only if toggle menu is open
     const events = ['scroll', 'resize'];
+ 
     if (isToggled) {
       events.forEach(ev => window.addEventListener(ev, toggleMenuHandler));
       // Clean up
@@ -26,49 +31,28 @@ const Navbar = () => {
     }
   }, [isToggled]);
 
+  useEffect(() => {
+    // Close Nav menu on url change (Mobile devices)
+    if (isToggled) {
+      toggleMenuHandler();
+    }
+  }, [currentUrl]);
+
   return (
     <header className="navbar">
       <Navheading toggleMenuHandler={toggleMenuHandler} />
       <nav className="navbar__content" style={toggleClass}>
         <NavItems>
-          <NavItem 
-            link={"/"} 
-            handler={toggleMenuHandler} 
-            title={"Home"} 
-          />
-          <NavItem 
-            link={"/about"} 
-            handler={toggleMenuHandler} 
-            title={"About"} 
-          />
+          <NavItem link={"/"} title={"Home"} />
+          <NavItem link={"/about"} title={"About"} />
           <DropDown class="nav__item" title={"Classes"}>
-            <NavItem
-              link={"/adults"}
-              handler={toggleMenuHandler}
-              title={"TKD Adults"}
-            />
-            <NavItem 
-              link={"/kids"} 
-              handler={toggleMenuHandler} 
-              title={"TKD Kids"} 
-            />
-            <NavItem 
-              link={"/private"} 
-              handler={toggleMenuHandler} 
-              title={"TKD Private"} 
-            />
+            <NavItem link={"/adults"} title={"TKD Adults"} />
+            <NavItem link={"/kids"} title={"TKD Kids"} />
+            <NavItem link={"/private"} title={"TKD Private"} />
           </DropDown>
           <DropDown class="nav__item" title={"More"}>
-            <NavItem
-              link={"/taekwondo"}
-              handler={toggleMenuHandler}
-              title={"Taekwondo"}
-            />
-            <NavItem 
-              link={"/ranks"} 
-              handler={toggleMenuHandler} 
-              title={"Ranks"} 
-            />
+            <NavItem link={"/taekwondo"} title={"Taekwondo"} />
+            <NavItem link={"/ranks"} title={"Ranks"} />
           </DropDown>
         </NavItems>
       </nav>

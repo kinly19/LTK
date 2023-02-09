@@ -5,7 +5,9 @@ const ScrollToTop = (props) => {
   let currentUrl = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (!currentUrl.hash) {
+      window.scrollTo(0, 0);
+    }
   }, [currentUrl]);
 
   return props.children;

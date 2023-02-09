@@ -35,7 +35,7 @@ const About = () => {
             to find out more.
           </p>
         </TextContainer>
-        <Button redirectTo={"/classes"}>Classes</Button>
+        <Button redirectTo={"/#workshops"}>Workshops</Button>
       </ContentContainer>
     </PageLayout>
   );

@@ -6,14 +6,14 @@ import SubHeading from '../../components/Heading/SubHeading/SubHeading';
 import Accordion from '../../components/Accordion/Accordion';
 import Button from '../../components/Button/Button';
 //Assets
-import img2 from '../../assets/img/img2.jpg';
+import img6 from '../../assets/img/img6.jpg';
 import './TkdAdults.scss';
 
 const TkdAdults = () => {
   return (
-    <PageLayout heading={"TKD Adults"} backgroundImage={img2}>
+    <PageLayout heading={"TKD Adults"} backgroundImage={img6}>
       <ContentContainer>
-        <Img class={"imgContainer-border"} imgSrc={img2} />
+        <Img class={"image-border"} imgSrc={img6} />
         <TextContainer>
           <p>
             Say goodbye to mundane health club routines and hello to a world of
@@ -37,7 +37,7 @@ const TkdAdults = () => {
           </p>
         </TextContainer>
 
-        <div class="adults__accordion">
+        <div class="accordion-container">
           <SubHeading>Empower Yourself By</SubHeading>
           <Accordion title={"Letting Go of Stress"}>
             <TextContainer>
@@ -115,7 +115,7 @@ const TkdAdults = () => {
           </Accordion>
         </div>
 
-        <Button class="adults__btn" redirectTo={"/booking"}>
+        <Button class="mt-5" redirectTo={"/booking"}>
           Book A Free Trial
         </Button>
       </ContentContainer>

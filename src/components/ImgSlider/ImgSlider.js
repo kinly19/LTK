@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, memo} from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 import useCount from '../../hooks/UseCount/useCount';
 import IconButton from '../Button/IconButton/IconButton';
@@ -6,7 +6,7 @@ import CarouselButtons from '../Carousel/CarouselButtons/CarouselButtons';
 import Img from '../Img/Img';
 import './ImgSlider.scss';
 
-const ImgSlider = (props) => {
+const ImgSlider = memo((props) => {
   // Custom hook
   const {
     count: currentSlide,
@@ -37,6 +37,6 @@ const ImgSlider = (props) => {
       </div>
     </div>
   );
-};
+});
 
 export default ImgSlider;

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import useCount from '../../hooks/UseCount/useCount'; // custom hook
 import CarouselButtons from './CarouselButtons/CarouselButtons';
 import CarouselItem from './CarouselItem/CarouselItem';
@@ -35,10 +35,11 @@ const Carousel = (props) => {
     setViewPortWidth(window.innerWidth);
   };
 
-  const toggleImageSliderHandler = (index) => {
+  // UseCallback to stop child component from re rendering
+  const toggleImageSliderHandler = useCallback((index) => {
     setShowSlider(!showSlider);
     if (!showSlider) setSelectedSlideIndex(index);
-  }
+  },[showSlider])
 
   useEffect(() => {
     setLength(props.imgData.length);
@@ -61,11 +62,11 @@ const Carousel = (props) => {
       </div>
       <CarouselButtons onClickLeft={prevSlideHandler} onClickRight={() => nextSlideHandler(slideAmount)} />
       <ImgSlider
-          onToggle={showSlider}
-          imageData={imageArray}
-          currentSlide={selectedSlideIndex}
-          onToggleSlider={toggleImageSliderHandler}
-        />
+        onToggle={showSlider}
+        imageData={imageArray}
+        currentSlide={selectedSlideIndex}
+        onToggleSlider={toggleImageSliderHandler}
+      />
     </div>
   );
 };

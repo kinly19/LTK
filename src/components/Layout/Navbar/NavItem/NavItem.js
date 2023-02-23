@@ -3,10 +3,10 @@ import './NavItem.scss';
 
 const NavItem = (props) => {
   const activeClass = (navData) =>
-    navData.isActive ? "nav__item--active" : null;
+    navData.isActive ? "navItem__link navItem__link--active" : "navItem__link";
     
   return (
-    <li className="nav__item">
+    <li className="navItem">
       <NavLink 
         className={activeClass} 
         to={props.link} 

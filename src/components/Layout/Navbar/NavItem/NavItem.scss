@@ -1,27 +1,26 @@
-.nav__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 6rem;
-  height: 100%;
-  width: 100%;
+.navItem {
   position: relative;
+  width: 100%;
+  color: var(--grey-primary);
+  list-style: none;
 
-  a {
+  &__link {
     display: flex;
     justify-content: center;
-    width: 100%;
-    padding: 2rem 0;
-    color: var(--grey-primary);
+    align-items: center;
+    text-align: center;
+    height: 6rem;
     text-decoration: none;
-  }
+    color: inherit;
 
-  &--active {
-    background-color: rgb(15 15 15 / 0.35)
+    &--active {
+      background-color: #131313;
+      color: var(--orange-primary);
+    }
   }
 
   &:hover {
     background-color: #1a1a1a;
+    color: var(--orange-primary);
   }
 }

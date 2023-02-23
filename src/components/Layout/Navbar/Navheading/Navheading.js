@@ -1,16 +1,16 @@
-import Navbrand from '../Navbrand/Navbrand.js';
+import NavBrand from '../NavBrand/NavBrand.js';
 import { FiMenu } from 'react-icons/fi';
-import './Navheading.scss';
+import './NavHeading.scss';
 
-const Navheading = (props) => {
+const NavHeading = (props) => {
   return (
-    <div className="nav__header">
-      <Navbrand />
-      <button className="nav__toggleBtn" onClick={props.toggleMenuHandler}>
-        <FiMenu className="nav__toggleIcon" />
+    <div className="navHeading">
+      <NavBrand />
+      <button className="navHeading__toggleBtn" onClick={props.toggleMenuHandler}>
+        <FiMenu className="navHeading__toggleIcon" />
       </button>
     </div>
   );
 };
 
-export default Navheading;
+export default NavHeading;

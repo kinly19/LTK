@@ -1,16 +1,13 @@
-// nav
-  // nav__header
-    // nav__toggleBtn
-      // nav__toggleIcon
+// navHeading
+  // __toggleBtn
+  // __toggleIcon
 
-.nav {
-  &__header {
-    display: flex;
-    align-items: center;
-    height: 6rem;
-    padding-right: 5%;
-    padding-left: var(--pl-lg);
-  }
+.navHeading {
+  display: flex;
+  align-items: center;
+  height: 6rem;
+  padding-right: 5%;
+  padding-left: var(--pl-lg);
   
   &__toggleBtn {
     display: none;
@@ -37,12 +34,10 @@
 }
 
 @media screen and (max-width: 48em) {
-  .nav {
-    &__header {
-      justify-content: space-between;
-      padding-right: var(--padding-md);
-    }
-  
+  .navHeading {
+    justify-content: space-between;
+    padding-right: var(--padding-md);
+ 
     &__toggleBtn {
       display: block;
       visibility: visible;

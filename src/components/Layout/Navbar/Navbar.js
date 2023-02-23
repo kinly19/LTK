@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import Navheading from './Navheading/Navheading.js';
+import NavHeading from './NavHeading/NavHeading.js';
 import NavItems from './NavItems/NavItems.js';
 import NavItem from './NavItem/NavItem.js';
 import DropDown from '../../DropDownMenu/DropDown.js';
@@ -40,17 +40,17 @@ const Navbar = () => {
 
   return (
     <header className="navbar">
-      <Navheading toggleMenuHandler={toggleMenuHandler} />
+      <NavHeading toggleMenuHandler={toggleMenuHandler} />
       <nav className="navbar__content" style={toggleClass}>
         <NavItems>
           <NavItem link={"/"} title={"Home"} />
           <NavItem link={"/about"} title={"About"} />
-          <DropDown class="nav__item" title={"Classes"}>
+          <DropDown class="navItem" title={"Classes"}>
             <NavItem link={"/adults"} title={"TKD Adults"} />
             <NavItem link={"/kids"} title={"TKD Kids"} />
             <NavItem link={"/private"} title={"TKD Private"} />
           </DropDown>
-          <DropDown class="nav__item" title={"More"}>
+          <DropDown class="navItem" title={"More"}>
             <NavItem link={"/taekwondo"} title={"Taekwondo"} />
             <NavItem link={"/ranks"} title={"Ranks"} />
           </DropDown>

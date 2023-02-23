@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import './Navbrand.scss';
+import './NavBrand.scss';
 
-const Navbrand = () => {
+const NavBrand = () => {
   return (
-    <Link className="nav__brand" to={"/"}>Ly Taekwondo</Link>
+    <Link className="navBrand" to={"/"}>Ly Taekwondo</Link>
   );
 };
 
-export default Navbrand;
+export default NavBrand;

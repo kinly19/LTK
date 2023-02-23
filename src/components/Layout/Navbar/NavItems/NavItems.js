@@ -2,7 +2,7 @@ import './NavItems.scss';
 
 const NavItems = (props) => {
   return (
-    <ul className="nav__items">
+    <ul className="navItems">
       {props.children}
     </ul>
   );

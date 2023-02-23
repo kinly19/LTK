@@ -1,9 +1,9 @@
-.nav__items {
+.navItems {
   display: flex;
 }
 
 @media screen and (max-width: 48em) {
-  .nav__items {
+  .navItems {
     flex-direction: column;
   }
 }

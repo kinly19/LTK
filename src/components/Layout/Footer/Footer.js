@@ -1,12 +1,12 @@
 import Socials from '../../Socials/Socials.js';
-import Navbrand from '../Navbar/Navbrand/Navbrand.js';
+import NavBrand from '../Navbar/NavBrand/NavBrand.js';
 import './Footer.scss';
 
 const Footer = () => {
   return (
     <footer className='footer'>
       <div className='footer__content'>
-        <Navbrand />
+        <NavBrand />
         <div className='footer__icons'>
           <p>Connect with us</p>
           <Socials />

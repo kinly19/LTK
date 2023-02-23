@@ -10,32 +10,33 @@ const About = () => {
   return (
     <PageLayout backgroundImage={img1} heading={"About Me"}>
       <ContentContainer>
-        <Img class="about__img" imgSrc={img1} alt="img1"/>
+        <Img class="image-border" imgSrc={img1} alt="img1" />
         <TextContainer>
           <p>
             Trained in wt style Taekwondo since 2009 and teaching From 2017,
-            with A life experience in both sport and traditional Aspects of
-            Martial Arts. During my training I have competed in a few, small UK
-            Competitions in sparring and Poomsae in the past.
+            with a life experience in both sport and traditional Aspects of
+            Martial Arts, I've had the honor of competing in a number of
+            exhilarating UK competitions, where I've put my skills in sparring
+            and Poomsae to the test.
           </p>
 
           <p>
             I am a firm believer that it is never too late to start learning a
-            new profound skill, no matter how big or small or what others have
-            to say. To me a martial art is a lifelong journey. not only
-            developing myself pysically but mentally too, inside and outside of
-            training.
+            new profound skill, Martial arts is a lifelong journey that can be
+            started at any age, regardless of what others may think. It's not
+            just physical development, but also mental growth both inside and
+            outside of training.
           </p>
 
           <p>
-            No matter what age, background or physical fitness level, everyone
-            is treated equally in a safe environment with respect. Classes are
-            tailored to meet individual goals and abilities, whether private or
-            group sessions (children and adults). Visit the workshop programmes
-            to find out more.
+            Visit our workshop programs to discover how we offer a safe and
+            respectful training environment for individuals of all ages,
+            backgrounds, and physical fitness levels. Our classes are tailored
+            to suit each person's goals and abilities, whether in private or
+            group sessions for both children and adults.
           </p>
         </TextContainer>
-        <Button redirectTo={"/#workshops"}>Workshops</Button>
+        <Button class={"mt-5"} redirectTo={"/#workshops"}>Workshops</Button>
       </ContentContainer>
     </PageLayout>
   );

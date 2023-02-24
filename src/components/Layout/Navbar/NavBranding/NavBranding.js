@@ -3,7 +3,7 @@ import './NavBrand.scss';
 
 const NavBrand = () => {
   return (
-    <Link className="navBrand" to={"/"}>Ly Taekwondo</Link>
+    <Link className="navBrand" to={"/"}>Ly Taekwondasasao</Link>
   );
 };
 

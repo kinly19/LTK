@@ -100,10 +100,8 @@ const Taekwondo = () => {
             which is highly regulated for the safety of its participants
           </p>
         </TextContainer>
-      </ContentContainer>
 
-      <ContentContainer>
-        <SubHeading>Benefits of Taekwondo</SubHeading>
+        <SubHeading class="mt-5">Benefits of Taekwondo</SubHeading>
         <ul className="taekwondo__list">{listContent}</ul>
       </ContentContainer>
     </PageLayout>

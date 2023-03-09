@@ -37,7 +37,7 @@ const TkdAdults = () => {
           </p>
         </TextContainer>
 
-        <div class="accordion-container">
+        <div className="accordion-container">
           <SubHeading>Empower Yourself By</SubHeading>
           <Accordion title={"Letting Go of Stress"}>
             <TextContainer>

@@ -6,12 +6,6 @@ import Card from '../../components/Card/Card';
 import img3 from '../../assets/img/img3.jpg';
 import './Ranks.scss';
 
-/*
-Todo
-Create as separate component to resuse in Taekwondo page
- - <ul className="ranks__list">{listContent}</ul>
-*/
-
 const Ranks = () => {
   const RANKDATA = [
     {
@@ -75,9 +69,9 @@ const Ranks = () => {
     },
   ];
 
-  const listContent = RANKDATA.map((rank) => {
+  const listContent = RANKDATA.map((rank, index) => {
     return (
-      <li className="ranks__item">
+      <li className="ranks__item" key={index}>
         <Card
           heading={rank.title}
           headingFontsize={"4.2rem"}
@@ -108,10 +102,7 @@ const Ranks = () => {
           </p>
         </TextContainer>
         <ul className="ranks__list">{listContent}</ul>
-      </ContentContainer>
-
-      <ContentContainer>
-        <SubHeading>Dan Ranks (Black belts)</SubHeading>
+        <SubHeading class="mt-5">Dan Ranks (Black belts)</SubHeading>
         <TextContainer>
           <p>
             Dan ranks increase from 1st Dan to the 10th Dan. Taekwondo teaches

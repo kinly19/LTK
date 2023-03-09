@@ -20,7 +20,7 @@
   }
 
   &:hover {
-    background-color: #1a1a1a;
+    background-color: var(--dark-nav-hover);
     color: var(--orange-primary);
   }
 }

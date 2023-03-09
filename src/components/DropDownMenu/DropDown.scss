@@ -13,10 +13,11 @@
     padding: 2rem 0;
     background-color: transparent;
     border: none;
-    color: var(--grey-primary);
+    color: inherit;
     font-family: var(--font-primary);
     font-size: 1.6rem;
     font-weight: 300;
+    cursor: pointer;
   }
 }
 

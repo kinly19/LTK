@@ -11,3 +11,9 @@
   border-bottom: 5px solid rgba(255, 176, 58, 0.158);
   font-family: var(--font-primary);
 }
+
+@media only screen and (max-width: 37.5em) {
+  .pageLayout {
+    padding: 12rem var(--padding-lg);
+  }
+}

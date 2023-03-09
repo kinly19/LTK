@@ -6,7 +6,7 @@
   position: fixed;
   width: 100%;
   z-index: 100;
-  background-color: var(--dark-nav);
+  background-color: var(--dark-nav-solid);
   font-family: var(--font-primary);
   color: var(--font-primary);
 
@@ -21,7 +21,6 @@
 @media screen and (max-width: 48em) {
   .navbar {
     flex-direction: column;
-    background-color: var( --dark-nav-solid);
 
     &__content {
       flex: 1;

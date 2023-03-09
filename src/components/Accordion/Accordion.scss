@@ -75,3 +75,11 @@
     width: 100%;
   } 
 }
+
+@media only screen and (max-width: 37.5em) {
+  .imageGradient {
+    img {
+      height: 25vh;
+    }
+  }
+}

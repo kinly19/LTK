@@ -1,0 +1,46 @@
+.inputField {
+  width: 100%;
+  border: none;
+  
+  input {
+    border-radius: 3px;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    background-color: rgb(226, 226, 226);
+    height: 4rem;
+    width: 100%;
+    padding: 0 1.6rem;
+    font-family: inherit;
+    font-size: 1.8rem;
+    letter-spacing: 0.15rem;
+    font-weight: 500;
+ 
+    &:placeholder-shown {
+      font-size: 1.6rem;
+    }
+  }
+ 
+  p {
+    margin-top: 1rem;
+    padding-left: .5rem;
+    font-size: 1.6rem;
+    color: #dd0000;
+  }
+  
+  &--error {
+    outline: none;
+    border-bottom: 4px solid #dd0000;
+  }
+
+  &--valid {
+    outline: none;
+    border-bottom: 4px solid #09cb00;
+  }
+
+  &:focus {
+    outline: none;
+    border: 3px solid var(--orange-primary);
+    transform: scale(1.01);
+  }
+}

@@ -1,0 +1,35 @@
+.selectField {
+  width: 100%;
+   
+  select {
+    border-radius: 3px;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    height: 4rem;
+    width: 100%;
+    padding-left: 1rem;
+    border-radius: 5px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    font-family: inherit;
+  }
+
+  p {
+    margin-top: 1rem;
+    padding-left: .5rem;
+    font-size: 1.6rem;
+    color: red;
+  }
+  
+  &--error {
+    outline: none;
+    border-bottom: 3px solid red;
+  }
+
+  &--valid {
+    outline: none;
+    border-bottom: 3px solid rgb(0, 255, 34);
+    width: 10%;
+  }
+}

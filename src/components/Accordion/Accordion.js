@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { BsPlusLg } from 'react-icons/bs';
+import Img from '../Img/Img';
 import './Accordion.scss';
 
 const Accordion = (props) => {
@@ -14,7 +15,7 @@ const Accordion = (props) => {
   }
 
   return (
-    <div className="accordion" style={toggleContentStyle}>
+    <div className={isToggled ? "accordion toggleContent" : "accordion"} >
       <div className="accordion__header" onClick={toggleAccordionHandler}>
         <h1>{props.title}</h1>
         <span className={ isToggled ? "accordion__icon accordion__icon--open" : "accordion__icon"}>
@@ -22,14 +23,13 @@ const Accordion = (props) => {
         </span>
       </div>
 
-      <div className="accordion__content" style={toggleContentStyle}>
-        <div className="imageGradient">
-          <img src={props.img} alt="" />
-        </div>
-        <div className="accordion__textContent">
-          {props.children}
-          {/* button */}
-        </div>
+      <div className={isToggled ? "accordion__content toggleContent" : "accordion__content"} >
+        {props.img && (
+          <div className='imageGradient'>
+            <Img class={"imageGradient"} imgSrc={props.img}></Img>
+          </div>
+        )}
+        <div className="accordion__textContent">{props.children}</div>
       </div>
     </div>
   );

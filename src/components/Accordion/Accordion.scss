@@ -4,6 +4,8 @@
   //__content 
     //__textContent
 
+// toggleContent
+
 .accordion {
   max-height: 7rem;
   width: 100%;
@@ -12,7 +14,7 @@
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border-bottom: 3px solid var(--orange-primary);
-      
+    
   h1 {
     font-size: var(--text-main);
   }
@@ -55,31 +57,8 @@
   }
 }
 
-.imageGradient {
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(255,255,255,0) 65%, rgba(32,32,32,1) 97%);
-  }
-
-  img {
-    object-fit: cover;
-    object-position: center;
-    height: 45vh;
-    width: 100%;
-  } 
-}
-
-@media only screen and (max-width: 37.5em) {
-  .imageGradient {
-    img {
-      height: 25vh;
-    }
-  }
+.toggleContent { 
+  max-height: 100rem;
+  opacity: 1;
+  visibility: visible;
 }

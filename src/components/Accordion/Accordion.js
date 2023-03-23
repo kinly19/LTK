@@ -5,15 +5,8 @@ import './Accordion.scss';
 
 const Accordion = (props) => {
   const [isToggled, setIsToggled] = useState(false);
-
-  const toggleContentStyle = isToggled
-    ? { maxHeight: "100rem", opacity: "1", visibility: "visible" }
-    : {};
-
-  const toggleAccordionHandler = () => {
-    setIsToggled(!isToggled);    
-  }
-
+  const toggleAccordionHandler = () => setIsToggled(!isToggled);
+  
   return (
     <div className={isToggled ? "accordion toggleContent" : "accordion"} >
       <div className="accordion__header" onClick={toggleAccordionHandler}>

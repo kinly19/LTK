@@ -1,0 +1,11 @@
+.formConfirmation {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  font-size: 2rem;
+  line-height: var(--line-height-text);
+
+  &__span {
+    color:  var(--grey-primary);
+  }
+}

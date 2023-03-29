@@ -1,0 +1,156 @@
+/* Colour Variables */
+:root {
+  --grey-primary: #F3F3F3;
+  --grey-secondary: #FFFFFF;
+  --orange-primary: #FFB03A;
+  --dark-primary: #272727;
+  --dark-secondary: #202020;
+  --dark-nav-solid: #202020;
+  --dark-nav-hover: #1a1a1a;
+  --dark-overlay: #060606a1;
+}
+
+/* Font Variables */
+:root {
+  --heading-main: 9.6rem;
+  --heading-secondary: 6.4rem;
+  --heading-sub: 3.2rem;
+  --text-main: 2.1rem;
+  --font-primary: 'Lato', sans-serif;
+  --font-secondary: 'Quicksand';
+  --font-weight-light: 100;
+  --font-weight-heavy: 800;
+  --line-height-header: 9rem;
+  --line-height-text: 3.1rem;
+  --letter-space-text: 0.03rem
+}
+
+/* Utility Variables */
+:root {
+  --pl-lg: 15%;
+  --pr-lg: 15%;
+  --pl-sm: 5%;
+  --pr-sm: 5%;
+  --padding-lg: 20%;
+  --padding-md: 10%;
+  --padding-sm: 5%;
+}
+
+/* Utility classes */
+.mt-3 {
+  margin-top: 3rem;
+}
+
+.mt-5 {
+  margin-top: 5rem;
+}
+
+.image-border {
+  height: 50vh;
+  min-height: 30rem;
+  width: 100%;
+  object-fit: cover;
+  border: 1rem solid var(--dark-secondary);
+  border-radius: 5px;
+}
+
+.imageGradient {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 65%, rgba(32,32,32,1) 97%);
+  }
+
+  img {
+    object-fit: cover;
+    object-position: center;
+    height: 45vh;
+    width: 100%;
+  } 
+}
+
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 5rem;
+}
+
+/* Global styles reset */
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+  /* 1 rem = 10px when default font-size is 16px */
+
+  // Extra large screens
+  @media only screen and (max-width: 192em) {
+    font-size: 81.25%;
+  }
+
+  // Large screens
+  @media only screen and (max-width: 136em) {
+    font-size: 62.5%;
+  }
+  
+  // Medium screens
+  @media only screen and (max-width: 78em) {
+    font-size: 50%;
+  }
+
+  // Small screens
+  @media only screen and (max-width: 37.5em) {
+    font-size: 45%;
+  }
+}
+
+body {
+  height: 100%;
+  min-width: 300px;
+  background: var(--dark-primary);
+  font-family: 'Lato','Quicksand','Roboto', 'Oxygen';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@media screen and (max-width: 78em) {
+  :root {
+    --padding-lg: 15%;
+  }
+}
+
+@media screen and (max-width: 48em) {
+  :root {
+    --padding-lg: 10%;
+    --pl-lg: 10%;
+    --pr-lg: 10%;
+  }
+
+  .image-border {
+    height: 35vh;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .imageGradient {
+    img {
+      height: 25vh;
+    }
+  }
+}

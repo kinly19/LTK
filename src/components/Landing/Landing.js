@@ -1,4 +1,5 @@
 import img1 from '../../assets/img/img1.jpg'
+import Button from '../Button/Button';
 import './Landing.scss';
 
 const Landing = () => {
@@ -14,6 +15,7 @@ const Landing = () => {
         <h1>Kwon</h1>
         <h1>Do</h1>
         <h2>An endless life skill</h2>
+        <Button redirectTo={"/#workshops"}>Workshops</Button>
       </div>
     </div>
   );

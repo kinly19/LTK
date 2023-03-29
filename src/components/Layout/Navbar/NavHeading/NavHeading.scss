@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   height: 6rem;
-  padding-right: 5%;
+  padding-right: var(--pr-sm);
   padding-left: var(--pl-lg);
   
   &__toggleBtn {

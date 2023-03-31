@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import TextContent from '../Layout/Text/TextContainer';
+import useCountWithEvents from '../../hooks/useCountWithEvents/useCountWithEvents';
 import './Testimonial.scss';
 
 const Testimonial = () => {
@@ -26,48 +26,15 @@ const Testimonial = () => {
     },
   ];
 
-  const [testimonialIndex, setTestimonialIndex] = useState(1);
-  const [touchPosition, setTouchPosition] = useState({
-    touchStart: null,
-    touchEnd: null,
-  });
+  const {
+    count: testimonialIndex,
+    setCount,
+    touchStartHandler,
+    touchMoveHandler,
+    touchEndHandler,
 
-  const touchStartHandler = (e) => {
-    setTouchPosition({
-      ...touchPosition,
-      touchStart: e.targetTouches[0].clientX,
-    });
-  };
+  } = useCountWithEvents(TESTIMONIALDATA.length);
 
-  const touchMoveHandler = (e) => {
-    setTouchPosition({
-      ...touchPosition,
-      touchEnd: e.targetTouches[0].clientX,
-    });
-  };
-
-  const nextTestimonialHandler = () => {
-    setTestimonialIndex((prevState) => prevState + 1);
-    if (testimonialIndex === 2) setTestimonialIndex(0);
-  };
-
-  const prevTestimonialHandler = () => {
-    setTestimonialIndex((prevState) => prevState - 1);
-    if (testimonialIndex === 0) setTestimonialIndex(2);
-  };
-
-  const touchEndHandler = () => {
-    const { touchStart, touchEnd } = touchPosition;
-
-    if (!touchEnd) return;
-    // Touch slide left
-    if (touchStart - touchEnd > 120) prevTestimonialHandler();
-    // Touch slide right
-    if (touchStart - touchEnd < -120) nextTestimonialHandler();
-
-    setTouchPosition({ ...touchPosition, touchEnd: null });
-  };
- 
   const spanItems = TESTIMONIALDATA.map((_, index) => (
     <span
       key={index}
@@ -76,7 +43,7 @@ const Testimonial = () => {
           ? "testimonial__actionSpan active"
           : "testimonial__actionSpan"
       }
-      onClick={() => setTestimonialIndex(index)}
+      onClick={() => setCount(index)}
     ></span>
   ));
 

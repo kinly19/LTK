@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import useCount from '../../hooks/UseCount/useCount'; // custom hook
+import useCountWithEvents from '../../hooks/useCountWithEvents/useCountWithEvents'; // custom hook
 import CarouselButtons from './CarouselButtons/CarouselButtons';
 import CarouselItem from './CarouselItem/CarouselItem';
 import ImgSlider from '../ImgSlider/ImgSlider';
@@ -17,7 +17,10 @@ const Carousel = (props) => {
     count: currentSlideIndex,
     incrementCount: nextSlideHandler,
     decrementCount: prevSlideHandler,
-  } = useCount(length);
+    touchStartHandler,
+    touchMoveHandler,
+    touchEndHandler,
+  } = useCountWithEvents(length);
 
   // Slides to show per view
   let slideAmount = 3;
@@ -37,6 +40,7 @@ const Carousel = (props) => {
 
   // UseCallback to stop child component from re rendering
   const toggleImageSliderHandler = useCallback((index) => {
+    // Toggle ImgSlider component
     setShowSlider(!showSlider);
     if (!showSlider) setSelectedSlideIndex(index);
   },[showSlider])
@@ -47,7 +51,12 @@ const Carousel = (props) => {
   }, [props.imgData.length, viewportWidth]);
 
   return (
-    <div className="carousel">
+    <div
+      className="carousel"
+      onTouchStart={touchStartHandler}
+      onTouchMove={touchMoveHandler}
+      onTouchEnd={(e) => touchEndHandler(e, slideAmount)}
+    >
       <div className="carousel__wrapper">
         <div className="carousel__content-wrapper">
           <div
@@ -60,7 +69,10 @@ const Carousel = (props) => {
           </div>
         </div>
       </div>
-      <CarouselButtons onClickLeft={prevSlideHandler} onClickRight={() => nextSlideHandler(slideAmount)} />
+      <CarouselButtons
+        onClickLeft={() => prevSlideHandler(slideAmount)}
+        onClickRight={() => nextSlideHandler(slideAmount)}
+      />
       <ImgSlider
         onToggle={showSlider}
         imageData={imageArray}

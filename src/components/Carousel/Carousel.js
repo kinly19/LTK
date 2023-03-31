@@ -52,6 +52,12 @@ const Carousel = (props) => {
     return () => window.removeEventListener("resize", resizeHandler);
   }, [props.imgData.length, viewportWidth]);
 
+  useEffect(() => {
+    // Block scrolling if overlay is open
+    if (showSlider) document.body.style.overflow = "hidden";
+    return () => (document.body.style.overflow = "unset");
+  }, [showSlider]);
+
   return (
     <div
       className="carousel"

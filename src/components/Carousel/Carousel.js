@@ -48,6 +48,8 @@ const Carousel = (props) => {
   useEffect(() => {
     setLength(props.imgData.length);
     window.addEventListener("resize", resizeHandler);
+
+    return () => window.removeEventListener("resize", resizeHandler);
   }, [props.imgData.length, viewportWidth]);
 
   return (

@@ -1,4 +1,4 @@
-# Nicercy Food Recipe Search Website 
+# LTK Ly Taekwondo Website
 
 Ly Taekwondo Web application created with React.
 

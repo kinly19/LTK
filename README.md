@@ -6,7 +6,7 @@ Ly Taekwondo Web application created with React.
 https://lytaekwondo23.firebaseapp.com
 ## About
 
-LTK official website designed to provide a platform for a professional Taekwondo instructor to promote their businesses and reach a wider audience.
+LTK official website designed to provide a platform for a professional Taekwondo instructor to promote their business and reach a wider audience.
 
 ## Available Scripts
 
